@@ -1,10 +1,10 @@
 ## Questionnaire
 
-The frontend of this application is developed with Next.js and React and the backend using Node, Express, TypeORM and Postgres as the database.
+The frontend of this application is developed using Next.js and React and the backend using Node, Express, TypeORM and Postgres as the database.
 
 This application is divided into two projects: `server` which contains the backend and `webapp` which contains the frontend.
 
-This application is deployed on Google Cloud, using Cloud Run to run the `server` and `webapp` services and Cloud SQL to run the Postgres database.
+This application is deployed on Google Cloud, using Docker and Cloud Run to run the services and Cloud SQL to run the Postgres database.
 
 You can access to this app using the url: https://questionnaire-webapp-554293903687.us-central1.run.app.
 
