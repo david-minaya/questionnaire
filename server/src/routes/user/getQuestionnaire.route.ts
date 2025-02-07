@@ -36,6 +36,9 @@ getQuestionnaire.get('/questionnaires/:id', async (req, res) => {
     .leftJoinAndSelect('answer.answerOptions', 'answerOption')
     .leftJoinAndSelect('answerOption.option', 'option')
     .where('questionnaire.id = :id', { id })
+    .orderBy('questionnaire.id', 'ASC')
+    .addOrderBy('questionnaireQuestion.priority', 'ASC')
+    .addOrderBy('questionOption.id', 'ASC')
     .getOne();
 
   res.json(questionnaire);

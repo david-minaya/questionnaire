@@ -1,7 +1,8 @@
 import { User } from '@/types/user';
-import { api } from '@/utils/axiosInstance';
+import { cookies } from 'next/headers';
 
 export async function getUser() {    
-  const res = await api.get<User>('/auth/user');
-  return res.data;
+  const cookieStore = await cookies();
+  const userCookie = cookieStore.get('user');
+  return userCookie ? JSON.parse(userCookie.value) as User : undefined;
 }

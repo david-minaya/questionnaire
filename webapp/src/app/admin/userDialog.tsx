@@ -100,12 +100,12 @@ export function UserDialog(props: Props) {
                       paddingLeft='8px'
                       sx={{ listStylePosition: 'inside' }}>
                       {answer.answerOptions?.map(option => (
-                        <Box
+                        <Typography
                           component='li' 
                           margin='12px 0px'
                           key={option.id}>
                           {option.option.title}
-                        </Box>
+                        </Typography>
                       ))}
                     </Box>
                   </Box>

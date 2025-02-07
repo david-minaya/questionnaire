@@ -18,7 +18,9 @@ export async function login(prevState: string | null, formData: FormData): Promi
 
   const cookieHeader = res.headers['set-cookie']?.[0] || '';
   const cookieStore = await cookies();
+  
   cookieStore.set('session', cookieHeader);
+  cookieStore.set('user', JSON.stringify(res.data))
 
   redirect('/');
 }

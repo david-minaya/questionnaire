@@ -1,7 +1,5 @@
-import { getUser } from '@/actions/getUser';
 import { getUsers } from '@/actions/getUsers';
 import { logout } from '@/actions/logout';
-import { redirect } from 'next/navigation';
 import { UserItem } from './userItem';
 
 import { 
@@ -13,6 +11,7 @@ import {
   Toolbar, 
   Typography 
 } from '@mui/material';
+import { getUser } from '@/actions/getUser';
 
 export const dynamic = 'force-dynamic'
 
@@ -21,17 +20,22 @@ export default async function Admin() {
   const user = await getUser();
   const users = await getUsers();
 
-  if (user.role != 'admin') redirect('/');
-
   return (
     <Box>
       <AppBar position='fixed'>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography variant="h6" component="div">
+      <Toolbar sx={{ display: 'flex', gap: '24px' }}>
+          <Typography 
+            variant="h6" 
+            component="div"
+            sx={{ flexGrow: 1 }}>
             Admin
           </Typography>
+          <Typography variant="body1" component="div">
+            {user?.name}
+          </Typography>
           <Button
-            color="inherit"
+            color='secondary'
+            variant='contained'
             onClick={logout}>
             Logout
           </Button>
