@@ -1,0 +1,36 @@
+{
+  "name": "webapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "run-s docker:build docker:push cloudrun:deploy",
+    "docker:build": "docker build --tag us-central1-docker.pkg.dev/recargas-dominicanas/dev/questionnaire-webapp .",
+    "docker:push": "docker push us-central1-docker.pkg.dev/recargas-dominicanas/dev/questionnaire-webapp",
+    "cloudrun:deploy": "gcloud run deploy questionnaire-webapp --region us-central1 --image us-central1-docker.pkg.dev/recargas-dominicanas/dev/questionnaire-webapp"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.1.1",
+    "@mui/icons-material": "^6.4.3",
+    "@mui/material": "^6.4.3",
+    "axios": "^1.7.9",
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5"
+  }
+}
