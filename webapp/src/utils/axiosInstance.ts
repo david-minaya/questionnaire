@@ -2,8 +2,7 @@ import axios from 'axios';
 import { cookies } from 'next/headers';
 
 export const api = axios.create({
-  baseURL: process.env.API,
-  validateStatus: () => true
+  baseURL: process.env.API
 });
 
 api.interceptors.request.use(async (config) => {

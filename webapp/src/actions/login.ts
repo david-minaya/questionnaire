@@ -9,7 +9,7 @@ export async function login(prevState: string | null, formData: FormData): Promi
   const res = await api.post('/auth/login', { 
     username: formData.get('username'),
     password: formData.get('password')
-  });
+  }, { validateStatus: () => true });
 
   if (res.status !== 200) {
     console.log('login error ->', res.data);

@@ -43,7 +43,7 @@ export function QuestionnaireForm(props: Props) {
       options: qq.question.options?.map(option => ({
         id: option.id,
         title: option.title,
-        value: qq.question.answers?.at(-1)?.answerOptions?.some(ansOption => 
+        value: qq.question.answers?.[0]?.answerOptions?.some(ansOption => 
           ansOption.option?.id === option.id
         ) || false
       }))

@@ -2,8 +2,8 @@
 
 import { User } from '@/types/user';
 import { PersonOutline } from '@mui/icons-material';
-import { ListItemButton, ListItem, ListItemIcon, ListItemText, Typography, Box } from '@mui/material';
-import { useState } from 'react';
+import { ListItemButton, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { Fragment, useState } from 'react';
 import { UserDialog } from './userDialog';
 
 interface Props {
@@ -17,7 +17,7 @@ export function UserItem(props: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <Box>
+    <Fragment>
       <ListItemButton
         sx={{
           border: '1px solid lightgray',
@@ -51,6 +51,6 @@ export function UserItem(props: Props) {
         open={open}
         user={user}
         onClose={() => setOpen(false)}/>
-    </Box>
+    </Fragment>
   )
 }

@@ -15,8 +15,6 @@ export default async function Questionnarie(props: Props) {
   const id = (await params).id;
   const questionnarie = await getQuestionnaire(id);
 
-  console.log(questionnarie);
-
   return (
     <Box>
       <Toolbar sx={{ gap: '12px' }}>
