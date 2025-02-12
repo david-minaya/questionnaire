@@ -22,6 +22,6 @@ You can access to this app using the url: https://questionnaire-webapp-554293903
 
 I had to make some assumptions about how to implement some things in the questionnaires. For example, I didn't know if a user should be able to submit the same questionnaire multiple times, if the user should be able to update a questionnaire after submitting it, or if the user should be able to modify an answer from another questionnaire. Based on those questions, I made the following assumptions:
 
-- The user can only submit a quiz once.
-- The user cannot update a quiz that has already been submitted.
-- The user cannot modify answers submitted for other quizzes.
+- The user can only submit a questionnaire once.
+- The user cannot update a questionnaire that has already been submitted.
+- The user cannot modify the answers of questions submitted in other questionnaire.
